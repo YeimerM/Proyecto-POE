@@ -22,6 +22,7 @@ import javax.swing.JPanel;
 public final class VentanaPrincipal extends JFrame {
     
     private JButton btnJugar;
+    private JButton btnInstru;
     private JPanel jpContenido;
     
     public VentanaPrincipal(){
@@ -35,7 +36,7 @@ public final class VentanaPrincipal extends JFrame {
         setSize(1080,720);
         setLocationRelativeTo(null);
         setVisible(true);
-        setResizable(true);
+        setResizable(false);
         setLayout(null);
         
         //Configuración del encabezado
@@ -46,7 +47,7 @@ public final class VentanaPrincipal extends JFrame {
                 super.paintComponent(g);
 
                 // Establece el color de fondo del JPanel
-                g.setColor(Color.YELLOW); // Cambia el color aquí
+                g.setColor(Color.ORANGE); // Cambia el color aquí
                 g.fillRect(0, 0, getWidth(), getHeight());
             }
         };
@@ -62,7 +63,11 @@ public final class VentanaPrincipal extends JFrame {
         btnJugar = new JButton(iconoJugar);
         btnJugar.setBounds(500,400, 200,42);
         
+        btnInstru = new JButton("instrucciones");
+        btnInstru.setBounds(500,180, 200,42);
+        
         jpContenido.add(btnJugar);
+        jpContenido.add(btnInstru);
         ManejadorDeEventos manejadorEventos = new ManejadorDeEventos();
         btnJugar.addActionListener(manejadorEventos);
     }
@@ -70,7 +75,7 @@ public final class VentanaPrincipal extends JFrame {
     
     private void iniciarJuego(){
         dispose();
-        VentanaJuego ventanaJuego = new VentanaJuego();
+        VentanaJuego ventanaJuego = new VentanaJuego(); // VentanaJugador debe pasar para luego desde ahi con el next a VentanaJuego
     }
     
     private class ManejadorDeEventos implements ActionListener, KeyListener {

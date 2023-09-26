@@ -4,10 +4,8 @@
  */
 package vista;
 
+import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -17,7 +15,6 @@ import javax.swing.JPanel;
  */
 public final class VentanaJuego extends JFrame {
     private JPanel jpContenido;
-    private BufferedImage imagenFondo;
     
     public VentanaJuego (){
         iniciarComponentes();
@@ -33,23 +30,22 @@ public final class VentanaJuego extends JFrame {
         setResizable(false);
         setLayout(null);
         
-        try {
-            // Carga la imagen de fondo desde el directorio de clases del proyecto
-            imagenFondo = ImageIO.read(getClass().getResource("/imagenes/fondo.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
         //Configuración del encabezado
-        jpContenido = new JPanel();
-    }
-    
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
+        jpContenido = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
 
-        if (imagenFondo != null) {
-            g.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);
-        }
+                // Establece el color de fondo del JPanel
+                Color colorJuego = new Color(210,60,234);
+                g.setColor(colorJuego); // Cambia el color aquí
+                g.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        jpContenido.setSize(getWidth(),getHeight());        
+        jpContenido.setBounds(0,0, getWidth(), getHeight());
+        jpContenido.setLayout(null);
+        
+        add(jpContenido);
     }
 }
