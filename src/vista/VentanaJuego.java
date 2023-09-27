@@ -24,7 +24,7 @@ public final class VentanaJuego extends JFrame {
         //Configuración de la ventana
         setTitle("Juego Figuras");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1080,720);
+        setSize(1366,768);
         setLocationRelativeTo(null); 
         setVisible(true);
         setResizable(false);
