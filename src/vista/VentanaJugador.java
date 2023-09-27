@@ -9,5 +9,5 @@ package vista;
  * @author mende
  */
 public class VentanaJugador {
-    private 
+    
 }
