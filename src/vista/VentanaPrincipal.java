@@ -49,6 +49,7 @@ public final class VentanaPrincipal extends JFrame {
         
         //Configuración del encabezado
         jpContenido = new JPanel(){
+            // Establecer fondo del panel y pintar la imágen del menú
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -96,6 +97,7 @@ public final class VentanaPrincipal extends JFrame {
         
         // Configuración panel de instrucciones
         jpInstrucciones = new JPanel() {
+            // Establecer fondo del panel y pintar la imágen del menú
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
