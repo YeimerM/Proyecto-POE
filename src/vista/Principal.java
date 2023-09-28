@@ -13,12 +13,8 @@ import javax.swing.SwingUtilities;
  */
 public class Principal {
     public static void main(String[] args) {
-<<<<<<< HEAD
-        VentanaJugador ventana = new VentanaJugador();
-=======
      SwingUtilities.invokeLater(() -> {
         VentanaPrincipal ventana = new VentanaPrincipal();
->>>>>>> main
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      });   
     }}
