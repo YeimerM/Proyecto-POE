@@ -4,10 +4,41 @@
  */
 package vista;
 
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
 /**
  *
  * @author mende
  */
-public class VentanaJugador {
+public final class VentanaJugador extends JFrame {
+    private JPanel jpContenido;
+    private JTextField nombre;
+    private JButton next;
+    private JLabel jlNombre;
     
+    public VentanaJugador(){
+        iniciarComponentes();
+    }
+    private void iniciarComponentes() {
+        //Configuración de la ventana
+        setTitle("Jugador");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1080,720);
+        setLocationRelativeTo(null); 
+        setVisible(true);
+        setResizable(false);
+        setLayout(null);
+    jpContenido=new JPanel(new FlowLayout(SwingConstants.LEADING, 10, 10));
+    nombre=new JTextField(4);
+    add(jpContenido); 
+    nombre.setBounds(0,0,300,300);
+    jpContenido.add(nombre);
+    
+    }
 }
