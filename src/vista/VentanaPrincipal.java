@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -29,6 +30,8 @@ public final class VentanaPrincipal extends JFrame {
     private ImageIcon iconoJugar;
     private ImageIcon iconoInstru;
     private ImageIcon iconoVolver;
+    private ImageIcon imgInstru;
+    private JLabel jlInstru;
     
     public VentanaPrincipal(){
         iniciarComponentes();
@@ -112,13 +115,14 @@ public final class VentanaPrincipal extends JFrame {
         
         iconoVolver = new ImageIcon(getClass().getResource("/imagenes/icons/Volver1.png"));
         Image ImgV = iconoVolver.getImage();
-        ImgV = ImgV.getScaledInstance(265,78,Image.SCALE_SMOOTH); // Escalar la imágen para aumentar tamaño
+        ImgV = ImgV.getScaledInstance(275,88,Image.SCALE_SMOOTH); // Escalar la imágen para aumentar tamaño
         iconoVolver = new ImageIcon(ImgV);
         btnVolver = new JButton(iconoVolver);
-        btnVolver.setBounds(560,500, 265,78);
+        btnVolver.setBounds(560,500, 275,88);
         
         jpInstrucciones.add(btnVolver);
         btnVolver.addActionListener(manejadorEventos);
+        
     }
     
     
@@ -128,15 +132,23 @@ public final class VentanaPrincipal extends JFrame {
     }
     
     private void verInstru () {
-        //dispose();
-        //VentanaInstru ventanaInstru = new VentanaInstru();  Agregar una venta emergente(JDialog o JOptionPane)
-        
-        //JOptionPane.showMessageDialog(null, "Esto es una ventana emergente", "INSTRUCCIONES JUEGO FIGURAS", JOptionPane.INFORMATION_MESSAGE);
         getContentPane().remove(jpContenido);
         getContentPane().add(jpInstrucciones);
         revalidate();
         repaint();
-
+        
+        // Acomodar botón Jugar
+        btnJugar.setBounds(560,400, 275,88);
+        jpInstrucciones.add(btnJugar);
+        
+        // Dibujar letrero Instrucciones
+        imgInstru = new ImageIcon(getClass().getResource("/imagenes/letreroInstru.png"));
+        Image imgIns = imgInstru.getImage();
+        imgIns = imgIns.getScaledInstance(700,200,Image.SCALE_SMOOTH); // Escalar el letrero
+        imgInstru = new ImageIcon(imgIns);
+        jlInstru = new JLabel(imgInstru);
+        jlInstru.setBounds(330,150,700,200);
+        jpInstrucciones.add(jlInstru);
     }
     
     private void verMenu() {
@@ -144,7 +156,10 @@ public final class VentanaPrincipal extends JFrame {
         getContentPane().add(jpContenido);
         revalidate();
         repaint();
-
+        
+        // Reorganizar botón Jugar
+        btnJugar.setBounds(540,240, 275,88);
+        jpContenido.add(btnJugar);
     }
     
     private class ManejadorDeEventos implements ActionListener {
