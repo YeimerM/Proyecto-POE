@@ -4,91 +4,39 @@
  */
 package vista;
 
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import static java.time.Clock.system;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-/*import java.awt.Color;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-*/
+
 /**
  *
  * @author jhenn
  */
 public final class VentanaJugador extends JFrame{
-    JLabel jlNombre;
-    TextField txtNombre;
-    JButton btnNext;
-    
-    public VentanaJugador (){
-        this.setTitle("");
-        this.setSize(400,400);
-        this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocation(450,500);
-        
-        Botones();
-        Repaint();
-    }
-
-    private void Botones() {
-        this.setLayout(null);
-        
-        add(jlNombre = new JLabel("Nombre:"));
-        jlNombre.setBounds(10,10,70,20);
-        
-        add(txtNombre = new TextField());
-        txtNombre.setBounds(150,10,200,20);
-        
-        add(btnNext = new JButton("NEXT"));
-        btnNext.setBounds(150,150,100,30);
-        
-        btnNext.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Nombre: "+txtNombre.getText().toString());
-                JOptinePane.showMessageDialog(null,"nombre: "+txtNombre.getText.toString());
-            }
-        });
-    }
-
-    private void Repaint() {
-        
-    }
-}
-    
-       
-/*public final class VentanaJugador extends JFrame {
     private JPanel jpContenido;
+    private JLabel jlNombre;
+    private TextField txtNombre;
     private JButton btnNext;
-    private ImageIcon iconoNext;
     private ImageIcon imgMenu;
-    private JButton1 btnNombre;
     
     public VentanaJugador(){
         iniciarComponentes();
     }
     
     private void iniciarComponentes(){
-        //Configuración de la ventana
         setTitle("Jugador");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1366,768);
-        setLocationRelativeTo(null); 
         setVisible(true);
-        setResizable(false);
-        setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocation(450,500);
         
         jpContenido = new JPanel(){
         //colocar fondo 
@@ -116,27 +64,37 @@ public final class VentanaJugador extends JFrame{
         
         add(jpContenido);
         
-        //Botón
-        iconoNext = new ImageIcon(getClass().getResource("/imagenes/icons/Next1.png"));
-        Image imgN = iconoNext.getImage();
-        imgN = imgN.getScaledInstance(300,100,Image.SCALE_SMOOTH); // Escalar el icono
-        iconoNext = new ImageIcon(imgN);
-        btnNext = new JButton( iconoNext);
-        btnNext.setBounds(500,400, 300,100);
-        jpContenido.add(btnNext);
-        
-        ManejadorDeEventos manejadorEventos = new ManejadorDeEventos();
-        btnNext.addActionListener((ActionListener) manejadorEventos);  
-        
-    };
+        Botones();
+    }
 
-    private class ManejadorDeEventos implements ActionListener {
+    private void Botones() {
+        
+        this.setLayout(null);
+        
+        add(jlNombre = new JLabel("NOMBRE:"));
+        jlNombre.setBounds(500,200,300,40);
+        
+        add(txtNombre = new TextField());
+        txtNombre.setBounds(550,250,250,30);
+        
+        add(btnNext = new JButton("CONTINÚA"));
+        btnNext.setBounds(580,500,200,100);
+        
+        add(jpContenido);
+        
+    }
+        
+    private void ventanaPrincipal(){
+        dispose();
+        VentanaPrincipal ventanaPrincipal =new VentanaPrincipal();
+    }
+        
+    class ManejadorDeEventos implements ActionListener{
         @Override
-        public void actionPerformed(ActionEvent evento){
-            if(evento.getSource() == btnNext){                
-                //VentanaPrincipal;
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==btnNext){
+            ventanaPrincipal();
             }
-        }
-    }  
+        }   
+    }
 }
-*/
