@@ -14,7 +14,10 @@ import javax.swing.SwingUtilities;
 public class Principal {
     public static void main(String[] args) {
      SwingUtilities.invokeLater(() -> {
-        VentanaPrincipal ventana = new VentanaPrincipal();
+         
+        VentanaJuego ventana = new VentanaJuego();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //VentanaPrincipal ventana = new VentanaPrincipal();
+        //ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      });   
     }}
