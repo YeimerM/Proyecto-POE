@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities;
 public class Principal {
     public static void main(String[] args) {
      SwingUtilities.invokeLater(() -> {
-        VentanaJugador ventana = new VentanaJugador();
+        VentanaSalir ventana = new VentanaSalir();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      });   
     }
