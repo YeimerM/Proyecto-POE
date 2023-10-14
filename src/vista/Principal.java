@@ -1,23 +1,21 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+
+ Yeimer Armando Mendez Sanchez
+ FPOE Grp. #81
+ LAB #1
+ 11 de octubre de 2023
+
  */
 package vista;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author mende
- */
+
 public class Principal {
     public static void main(String[] args) {
      SwingUtilities.invokeLater(() -> {
-         
-        VentanaJuego ventana = new VentanaJuego();
+        VentanaPrincipal ventana = new VentanaPrincipal();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //VentanaPrincipal ventana = new VentanaPrincipal();
-        //ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      });   
     }}

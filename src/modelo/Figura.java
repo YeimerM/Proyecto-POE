@@ -1,3 +1,11 @@
+/*
+
+ Yeimer Armando Mendez Sanchez
+ FPOE Grp. #81
+ LAB #1
+ 11 de octubre de 2023
+
+ */
 package modelo;
 
 
@@ -6,20 +14,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author mende
- */
 public abstract class Figura {
     protected final String rutaImagen;
-    String name;
-    int ancho;
-    int alto;
+    protected String name;
+    protected int ancho;
+    protected int alto;
     protected JLabel lbFigura;
     protected ImageIcon imgFigura;
     
@@ -57,7 +57,5 @@ public abstract class Figura {
     public int getAlto() {
         return alto;
     }
-    public abstract void aumentarTamaño();
-    public abstract void restaurarTamaño();
     
 }

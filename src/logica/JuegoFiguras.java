@@ -1,6 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+
+ Yeimer Armando Mendez Sanchez
+ FPOE Grp. #81
+ LAB #1
+ 11 de octubre de 2023
+
  */
 package logica;
 
@@ -14,10 +18,7 @@ import modelo.FiguraCuadrado;
 import modelo.FiguraRectangulo;
 import modelo.FiguraTriangulo;
 
-/**
- *
- * @author mende
- */
+
 public class JuegoFiguras {
     private List<List<Figura>> figurasAnidadas;
     private Random random;
@@ -72,8 +73,7 @@ public class JuegoFiguras {
         claseElegida = figurasAnidadas.get(numClase);
     }
     
-    public  JLabel obtenerFiguraReferencia(){
-
+    public  JLabel getFiguraReferencia(){
         // Elejir la figura de referencia
         int numFigRef = random.nextInt(claseElegida.size());
         Figura figRef;
@@ -111,8 +111,8 @@ public class JuegoFiguras {
         return lbFigRef;
     }
     
-    public List<JLabel> figurasMostrar(){
-        List<JLabel> mostrarFiguras = new ArrayList<>();
+    public List<JLabel> getFiguras(){
+        List<JLabel>mostrarFiguras = new ArrayList<>();
         List<Integer> indxElegidos = new ArrayList<>();
         
         for (int i = 0; i < 3; i++) {
@@ -126,12 +126,7 @@ public class JuegoFiguras {
             mostrarFiguras.add(figuraElegida.getFigura());
             
             indxElegidos.add(numObjeto);
-            
-            System.out.println("Clase: " + claseElegida.get(0).getClass().getSimpleName() +
-                    ", Objeto " + (i + 1) + ": " + figuraElegida.getName());
-            
         }
-        
         return mostrarFiguras;
     }
 }
