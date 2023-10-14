@@ -1,12 +1,17 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+
+ Yeimer Armando Mendez Sanchez
+ FPOE Grp. #81
+ LAB #1
+ 11 de octubre de 2023
+
  */
 package vista;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -15,10 +20,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author mende
- */
+
 public final class VentanaPrincipal extends JFrame {
     
     private JButton btnJugar;
@@ -41,6 +43,7 @@ public final class VentanaPrincipal extends JFrame {
         //Configuración de la ventana
         setTitle("Menú Principal");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/FigurasIcon.png")));
         setSize(1366,768);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -130,7 +133,7 @@ public final class VentanaPrincipal extends JFrame {
     
     private void iniciarJuego(){
         dispose();
-        VentanaJuego ventanaJuego = new VentanaJuego(); // VentanaJugador debe pasar para luego desde ahi con el next a VentanaJuego
+        VentanaJugador ventanaJugador = new VentanaJugador(); // VentanaJugador debe pasar para luego desde ahi con el next a VentanaJuego
     }
     
     private void verInstru () {
